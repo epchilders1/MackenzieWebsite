@@ -1,0 +1,103 @@
+  /* HomePage.css */
+  /* Style for the navbar */
+  .navbar-custom {
+      background-color: transparent; /* Make navbar background transparent */
+      z-index: 2; /* Set a higher z-index to keep it above the carousel */
+      position: absolute; /* Change to fixed positioning */
+      top: 0; /* Position it at the top of the viewport */
+      left: 0;
+      width: 100%; /* Make it full-width */
+      font-size: 2em; /* Adjust font size as needed */
+      font-family: 'custom-font', sans-serif;
+    }
+    
+    .navbar-custom .nav-link {
+      margin-right: 25px; /* Adjust the value as needed to increase the distance */
+    }
+    
+    .navbar-brand-custom {
+      font-size: 2.1em; /* Change the font size as desired */
+      font-family: 'custom-font', sans-serif; /* Apply the custom font to the navbar-brand */
+      color: white;
+      transition: color 0.3s ease; 
+    }
+    
+    .nav-link {
+      color: white; /* Font color of the NavLink items */
+    }
+    
+    /* Style for the carousel */
+    .carousel-container {
+      position: relative; /* Ensure relative positioning for absolute children */
+      height: calc(100vh - 56px); /* Adjust height to account for navbar height */ 
+      animation: slideInTop .75s ease forwards;
+    } 
+    @keyframes slideInTop {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+    
+    .carousel-container .carousel {
+      position: relative; /* Change to relative positioning */
+      top: 0; /* Remove top positioning */
+      left: 0;
+      width: 100%; /* Make it full-width */
+      height: 100%; /* Make it full-height */
+    }
+    
+    .carousel-container .carousel-item img {
+      height: 100vh; /* Set height to 100% of the carousel-container */
+      width: auto; /* Let the width scale proportionally to maintain aspect ratio */
+      object-fit: cover; /* Ensure the entire image is visible and fills the container */
+    }
+    @media (max-width: 768px) {
+      .navbar-custom {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+      }
+    
+      .navbar-brand-custom {
+        font-size: 1.5em; /* Adjust the font size as desired */
+      }
+    
+      .navbar-custom .nav-link {
+        margin-right: 10px; /* Reduce the margin for mobile screens */
+      }
+    
+      .carousel-container {
+        height: 100vh;
+      }
+    
+      .carousel-container .carousel-item img {
+        height: 100vh; /* Set height to 100% of the carousel-container */
+        width: 100%; /* Let the image take full width */
+        object-fit: cover; /* Ensure the entire image is visible and fills the container */
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .navbar-custom {
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+      }
+    
+      .navbar-brand-custom {
+        font-size: 1.2em; /* Adjust the font size as desired */
+      }
+    
+      .navbar-custom .nav-link {
+        margin-right: 5px; /* Reduce the margin for smaller screens */
+      }
+    
+      .carousel-container {
+        height: 100vh;
+      }
+    
+      .carousel-container .carousel-item img {
+        height: 100vh; /* Set height to 100% of the carousel-container */
+        width: 100%; /* Let the image take full width */
+        object-fit: cover; /* Ensure the entire image is visible and fills the container */
+      }
+    }

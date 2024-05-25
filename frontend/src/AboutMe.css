@@ -1,0 +1,114 @@
+/* AboutMe.css */
+/* Style for the navbar */
+.AboutMe .navbar-custom {
+  background-color: rgba(174, 174, 174, 0.441);
+    z-index: 2; /* Set a higher z-index to keep it above other content */
+    position: relative; /* Change to fixed positioning */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0;
+    width: 100%; /* Make it full-width */
+    font-size: 2em; /* Adjust font size as needed */
+    font-family: 'custom-font', sans-serif;
+}
+.AboutMe h1 {
+  font-style: bold;
+  font-size: 4em;
+}
+.AboutMe p {
+  font-size: 2em;
+}
+.AboutMe .navbar-custom .nav-link {
+    margin-right: 25px; /* Adjust the value as needed to increase the distance */
+}
+.aboutme-container {
+    display: flex; /* Use flexbox to arrange items */
+    background-color: transparent; /* Set the background color to transparent */
+    padding: 20px; /* Add padding for spacing */
+    max-width: 100%; /* Limit the maximum width of the container */
+    min-height: 100vh; /* Ensure the container expands to fit the viewport height */
+    margin: 0 auto; /* Center the container horizontally */
+    box-sizing: border-box; /* Include padding and border in the width */
+    background-image: url('./assets/plants.jpeg');
+    background-size: cover; /* Scale the background image as large as possible */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    font-family: 'body-font', sans-serif;
+  }
+  
+  
+  .photo {
+    flex: 0 0 auto; /* Let the photo size itself, don't grow or shrink */
+    margin-right: 20px; /* Add margin for spacing between photo and text */
+    max-width: 50%; /* Limit the maximum width of the photo */
+  }
+  @keyframes slideUp{
+    from {
+      transform: translateY(150px); /* Start 100px below its normal position */
+    }
+    to {
+      transform: translateY(0); /* Transition to its normal position */
+    }
+  }
+
+  
+  .photo img {
+    max-width: 75%; /* Limit the maximum width of the image to the container's width */
+    height: auto; /* Maintain the aspect ratio */
+    animation: slideUp .75s ease forwards;
+  }
+  
+  .text-box {
+    flex: 1; /* Allow the text box to grow to fill remaining space */
+    color: white; /* Text color */
+    padding: 20px; /* Add padding for spacing within the text box */
+    animation: slideUp .75s ease forwards;
+    background-color: rgba(174, 174, 174, 0.441);
+  }
+  @media (max-width: 768px) {
+    .AboutMe h1 {
+      font-size: 3em;
+    }
+  
+    .AboutMe p {
+      font-size: 1.5em;
+    }
+  
+    .aboutme-container {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+  
+    .photo {
+      max-width: 75%;
+      margin: 0 auto 20px; /* Center the photo and add margin at the bottom */
+    }
+  
+    .text-box {
+      font-size: 1em;
+      text-align: center; /* Center the text */
+      padding: 0 20px; /* Ensure padding is consistent */
+    }
+  }
+  
+  @media (max-width: 480px) {
+  
+    .AboutMe h1 {
+      font-size: 2.5em;
+    }
+  
+    .AboutMe p {
+      font-size: 1.2em;
+    }
+  
+    .aboutme-container {
+      padding: 10px;
+    }
+  
+    .photo img {
+      max-width: 100%; /* Ensure the image takes full width on very small screens */
+    }
+  
+    .text-box {
+      font-size: 0.9em;
+      padding: 10px;
+      text-align: center; /* Center the text */
+    }
+  }

@@ -1,0 +1,99 @@
+.Admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+.Admin .navbar-custom {
+    background-color:  rgb(174, 174, 174); /* Set background color to light grey */
+    z-index: 2; /* Set a higher z-index to keep it above other content */
+    position: relative; /* Change to fixed positioning */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0;
+    width: 100%; /* Make it full-width */
+    font-size: 2em; /* Adjust font size as needed */
+    font-family: 'custom-font', sans-serif;
+}
+
+.Admin .navbar-custom .nav-link {
+    margin-right: 25px; /* Adjust the value as needed to increase the distance */
+}
+.admin-container {
+    font-family: 'body-font', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Makes the container full height of the viewport */
+}
+.welcome-text {
+    font-size: 2em; /* Twice the font size */
+}
+
+.button-group {
+    display: flex; /* Arrange buttons horizontally */
+    justify-content: center; /* Align buttons to the center */
+}
+
+.upload-button {
+    margin: 0 10px; /* Add margin between buttons */
+    font-size: 1.2em; /* Adjust button font size */
+    padding: 10px 20px; /* Adjust button padding */
+}
+
+/* Additional styles for the button if needed */
+#signInDiv {
+    margin-top: 20px; /* Adjust as needed */
+}
+@media (max-width: 768px) {
+    .Admin .navbar-custom {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .Admin .navbar-custom .nav-link {
+        margin-right: 15px; /* Adjust margin for smaller screens */
+    }
+
+    .welcome-text {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    .upload-button {
+        font-size: 1em; /* Adjust button font size for smaller screens */
+        padding: 8px 15px; /* Adjust button padding for smaller screens */
+        margin: 5px; /* Adjust margin for better spacing on smaller screens */
+        max-width: 150px; /* Adjust max width for buttons on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .Admin .navbar-custom {
+        font-size: 1.2em; /* Adjust font size for very small screens */
+        padding: 10px 10px; /* Adjust padding for very small screens */
+    }
+
+    .Admin .navbar-custom .nav-link {
+        margin-right: 10px; /* Adjust margin for very small screens */
+    }
+
+    .welcome-text {
+        font-size: 1.2em; /* Adjust font size for very small screens */
+    }
+
+    .upload-button {
+        font-size: 0.9em; /* Adjust button font size for very small screens */
+        padding: 5px 10px; /* Adjust button padding for very small screens */
+        margin: 5px; /* Adjust margin for better spacing on very small screens */
+        max-width: 120px; /* Adjust max width for buttons on very small screens */
+    }
+}
+@media (max-width: 1200px) {
+    .Admin .navbar-custom {
+        font-size: 1.5em; /* Adjust font size for screens smaller than 1200px */
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+    }
+
+    .Admin .navbar-custom .nav-link {
+        margin-right: 15px; /* Adjust margin for smaller screens */
+    }
+}

@@ -1,0 +1,140 @@
+#root{
+  background-color: antiquewhite;
+}
+
+  .Blog .navbar-custom {
+    background-color: rgba(174, 174, 174, 0.441);
+    z-index: 2;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 2em;
+    font-family: 'custom-font', sans-serif;
+  }
+  
+  .Blog .navbar-custom .nav-link {
+    margin-right: 25px;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(150px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  .modal-footer .btn {
+    font-family: 'body-font', sans-serif;
+  }
+  
+  
+  .custom-button {
+    margin: 0; /* Remove default margin */
+    margin-top: 5px;
+    overflow: hidden;
+  }
+  
+  .custom-button img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .Blog .carousel-container {
+    position: relative;
+    max-width: 100%;
+    max-height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    animation: slideUp 1s ease forwards;
+  }
+  
+  .blog-page {
+    margin-top: 2%;
+  }
+  
+  @media (max-width: 768px) {
+    .text-container {
+      flex-direction: column;
+    }
+  }
+  
+  .description {
+    display: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+  }
+  
+  .modal-content {
+    width: 80vh;
+    height: auto;
+    width: auto;
+    background-color: antiquewhite;
+  }
+  
+  .carousel {
+    width: 60vh;
+  }
+  
+  .carousel img {
+    height: auto;
+    width: auto;
+  }
+  
+  .description {
+    width: auto;
+    margin-right: 20vh;
+    margin-left: 20vh;
+    font-family: 'body-font', sans-serif;
+    max-width: 30vh;
+    font-size: 1.5em;
+  }
+  
+  .description p {
+    word-wrap: break-word;
+  }
+  
+  @media (min-width: 768px) {
+  .modal-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Keep your existing CSS */
+
+@media (max-width: 768px) {
+  /* Adjust width of the carousel for smaller screens */
+  .carousel {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-footer .btn {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjust width of the carousel for very small screens */
+  .carousel {
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

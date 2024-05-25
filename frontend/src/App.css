@@ -1,0 +1,67 @@
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  text-align: center;
+  background-color: antiquewhite !important;
+}
+
+/* App.css */
+
+/* Container for the entire app */
+.app-container {
+  position: relative;
+}
+
+/* Style for the navbar */
+.navbar-custom {
+  background-color: transparent; /* Make background color transparent */
+  z-index: 2; /* Set a higher z-index to keep it above the carousel */
+  position: absolute; /* Position the navbar absolutely within the container */
+  top: 0; /* Position it at the top of the container */
+  left: 0;
+  width: 100%; /* Make it full-width */
+  font-size: 2em;
+  font-family: 'custom-font', sans-serif;
+}
+
+ 
+.navbar-custom .nav-link {
+  margin-right: 25px; /* Adjust the value as needed to increase the distance */
+}
+.navbar-brand-custom {
+  font-size: 2.1em; /* Change the font size as desired */
+  font-family: 'custom-font', sans-serif; /* Apply the custom font to the navbar-brand */
+  color: white;
+  transition: color 0.3s ease; 
+}
+.nav-link {
+  color: white; /* Font color of the NavLink items */
+}
+
+/* Style for the carousel */
+.carousel-background {
+  position: absolute; /* Position the carousel absolutely within the container */
+  top: 0; /* Position it at the top of the container */
+  left: 0;
+  width: 100vh; /* Make it full-width */
+  z-index: 0; /* Push the carousel behind other content */
+}
+.carousel-item img {
+  height: 100vh; /* Set height to 100% of the viewport height */
+  width: auto; /* Let the width scale proportionally to maintain aspect ratio */
+  object-fit: cover; /* Ensure the entire image is visible and fills the container */
+}body {
+  background-color: antiquewhite !important;
+}
+
+
+
+@font-face {
+  font-family: 'custom-font';
+  src: url('./assets/Miss Blaker Regular.ttf') format('truetype'); /* Update the path to your font file */
+}
+@font-face {
+  font-family: 'body-font';
+  src: url('./assets/BodyFont.ttf') format('truetype');
+}

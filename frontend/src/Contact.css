@@ -1,0 +1,63 @@
+.contact-page {
+      background-image: url('./assets/otherPainting.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100%; /* Ensure the html and body elements cover the entire viewport */
+      margin: 0; /* Remove default margin */
+      padding: 0; /* Remove default padding */
+  }
+
+.Contact .navbar-custom {
+  background-color: rgba(174, 174, 174, 0.441);
+    z-index: 2; /* Set a higher z-index to keep it above other content */
+    position: relative; /* Change to fixed positioning */
+    top: 0; /* Position it at the top of the viewport */
+    left: 0;
+    width: 100%; /* Make it full-width */
+    font-size: 2em; /* Adjust font size as needed */
+    font-family: 'custom-font', sans-serif;
+}
+
+.Contact .navbar-custom .nav-link {
+    margin-right: 25px; /* Adjust the value as needed to increase the distance */
+}
+.contact-container {
+    font-family: 'body-font', sans-serif;
+    background-color: rgb(250, 255, 244);
+    border: 2px solid black; /* Add a border around the container */
+    width: 50%; /* Set the width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 75px; /* Add padding inside the container */
+    box-sizing: border-box; /* Include padding and border in the width */
+    margin-top: 10%; /* Add margin to the top of the container */
+    animation: slideUp .5s ease forwards;
+  }
+  @keyframes slideUp {
+    from {
+      transform: translateY(150%); /* Start 100px below its normal position */
+    }
+    to {
+      transform: translateY(0%); /* Transition to its normal position */
+    }
+  }
+  /* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-container {
+    width: 75%;
+    padding: 50px;
+    margin-top: 20vh;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    width: 90%;
+    padding: 25px;
+    margin-top: 25vh;
+  }
+  
+  .Contact .navbar-custom .nav-link {
+    margin-right: 10px;
+  }
+}
