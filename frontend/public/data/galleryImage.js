@@ -102,6 +102,14 @@ const data = [
   {
     "id": "cff4f9a6-e81c-4d13-ac1e-86b50ab5046f",
     "cover": "otherPainting-BfmDEPqh.jpg"
+  },
+  {
+    "id": "9eb58628-b80d-4208-ac04-8b297b4623ed",
+    "cover": "Screenshot 2024-02-29 at 8.40.02aÌÂÂ¯PM.png"
+  },
+  {
+    "id": "000e727b-4616-45c9-ae76-e9e0aed8dbed",
+    "cover": "kenzieField-DcNVFWe_.jpeg"
   }
 ];
 

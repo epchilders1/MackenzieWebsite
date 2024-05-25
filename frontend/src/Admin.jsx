@@ -22,7 +22,7 @@ function Admin() {
         
         try {
             console.log('Submitting file to /profile');
-            const response = await fetch('/profile', { // Correct URL
+            const response = await fetch('http://localhost:8000/profile', { // Correct URL
                 method: 'POST',
                 body: formData
             });
@@ -54,7 +54,7 @@ function Admin() {
     
         try {
             console.log('Submitting files to /blogpost');
-            const response = await fetch('/blogpost', {
+            const response = await fetch('http://localhost:8000/blogpost', {
                 method: 'POST',
                 body: formData
             });

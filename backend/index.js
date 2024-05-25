@@ -22,8 +22,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/admin/profile', profile);
-app.use('/admin/blogpost', blogpost);
+app.use('/profile', profile);
+app.use('/blogpost', blogpost);
 
 // Basic error handling middleware
 app.use((err, req, res, next) => {
