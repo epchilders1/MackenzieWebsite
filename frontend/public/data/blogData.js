@@ -20,7 +20,9 @@ const data = [
   {
     "id": "c4584397-344e-4e16-8ed7-9d9111014c17",
     "desc": "derricka sdasd",
-    "images": ["kenzieField-DcNVFWe_.jpeg"]
+    "images": [
+      "kenzieField-DcNVFWe_.jpeg"
+    ]
   },
   {
     "id": "0e25a17c-c6f2-4af8-9c12-5656b6fd044c",
@@ -54,6 +56,15 @@ const data = [
       "mackenzieLogo-CmtGDZJ8.jpeg",
       "plants-Cb8UBWF6-Cb8UBWF6.jpeg",
       "Screenshot 2024-03-01 at 1.37.33aÌÂÂ¯PM-CqMTWSi4.png"
+    ]
+  },
+  {
+    "id": "61080fbd-5b66-4f5b-8fd8-f46c9baeef05",
+    "desc": "ahaha utah",
+    "images": [
+      "ARA-CSVyoczC.png",
+      "CGI-B4Qw-G1l.jpeg",
+      "EvanChilders-rxaAFxH2.jpg"
     ]
   }
 ];
