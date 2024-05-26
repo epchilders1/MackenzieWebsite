@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const app = express();
 const profile = require('./profile');
 const blogpost = require('./blogpost');
-
+require('dotenv').config();
 // Security middleware
 app.use(helmet());
 
