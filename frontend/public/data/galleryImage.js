@@ -114,6 +114,10 @@ const data = [
   {
     "id": "bfded305-1851-4282-89de-2af2cbf40615",
     "cover": "NebulaNavigators-JYBlS6Ek.png"
+  },
+  {
+    "id": "f1af5041-a034-4597-824c-5503b3dc08d6",
+    "cover": "EvanChilders-rxaAFxH2.jpg"
   }
 ];
 
