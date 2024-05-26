@@ -117,9 +117,6 @@ function Admin() {
 
     return (
         <div className="Admin">
-            <head>
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://accounts.google.com;"></meta>
-</head>
             <Navbar className="navbar-custom" expand="lg">
                 <Container>
                     <Navbar.Brand href="/" className="navbar-brand-custom">Mackenzie Sweat</Navbar.Brand>
