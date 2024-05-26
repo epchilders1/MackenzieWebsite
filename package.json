@@ -27,5 +27,8 @@
   "bugs":{
     "url": "https://github.com/epchilders1/MackenzieWebsite/issues"
   },
-  "homepage": "https://github.com/epchilders1/MackenzieWebsite#readme"
+  "homepage": "https://github.com/epchilders1/MackenzieWebsite#readme",
+  "engines": {
+    "node": "20.x"
+  }
 }
