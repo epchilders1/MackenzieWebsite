@@ -7,7 +7,7 @@
   "scripts": {
     "start-client": "vite start",
     "dev": "vite",
-    "build": "vite build && (cd ../backend && npm install)",
+    "build": "npm install vite && vite build && (cd ../backend && npm install)",
     "test": "vite test",
     "eject": "vite eject",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
