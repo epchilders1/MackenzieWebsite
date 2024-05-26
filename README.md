@@ -1,0 +1,1 @@
+This is a little full-stack website I am throwing together to allow my girlfriend to upload and manage her own personal professional photography website. I am using React.js for the front end and Node.js and express for the backend.
