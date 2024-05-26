@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const multer = require('multer'); // Import multer
 
 const upload = multer({
-    dest: path.join(__dirname, '../uploads/') // Specify the destination folder for uploaded files
+    dest: path.join(__dirname, '/uploads') // Specify the destination folder for uploaded files
 }); 
 
 const router = express.Router();
