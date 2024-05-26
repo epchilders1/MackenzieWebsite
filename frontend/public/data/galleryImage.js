@@ -110,6 +110,10 @@ const data = [
   {
     "id": "000e727b-4616-45c9-ae76-e9e0aed8dbed",
     "cover": "kenzieField-DcNVFWe_.jpeg"
+  },
+  {
+    "id": "bfded305-1851-4282-89de-2af2cbf40615",
+    "cover": "NebulaNavigators-JYBlS6Ek.png"
   }
 ];
 

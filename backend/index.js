@@ -17,6 +17,17 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'] // Specify allowed headers
 }));
 
+app.get('/*', (req, res) => {
+  res.sendFile(
+    path.join(__dirname, '../frontend/dist/index.html'),
+    function(err){
+      if(err){
+        res.status(500).send(err);
+      }
+    }
+  );
+});
+
 // Parse JSON and urlencoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,7 +42,8 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something broke!');
 });
 
-const port = +process.env.PORT || 8000;
+const port = process.env.PORT || 8000;
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
