@@ -144,19 +144,7 @@ function Admin() {
                 </Container>
             </Navbar>
             <div className="admin-container">
-    {!acceptableEmails.includes(user.email) && loginAttempt && (
-        <>
-            <h1>Invalid Credentials</h1>
-            {/* Remove the "Verify Identity" section and the sign-in button */}
-        </>
-    )}
-    {!acceptableEmails.includes(user.email) && !loginAttempt && (
-        <>
-            <h1>Verify Identity to continue</h1>
-            <div id="signInDiv"></div>
-        </>
-    )}
-    {acceptableEmails.includes(user.email) && (
+    {(
         <>
             <p className="welcome-text">Welcome {user.name}</p>
             {selectedButton && (
