@@ -12,7 +12,7 @@ app.use(helmet());
 
 // Enable CORS for all routes
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:8000', 'https://evan-childers.com'], // Add your allowed origins here
+  origin: ['http://localhost:5173', 'http://localhost:8000', 'https://evan-childers.com', 'https://kenzie-websiteapp-08e2d0899b03.herokuapp.com'], // Add your allowed origins here
   methods: ['GET', 'POST'], // Specify allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'] // Specify allowed headers
 }));
