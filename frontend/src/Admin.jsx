@@ -81,47 +81,34 @@ function Admin() {
         setLoginAttempt(true);
     }
 
-    useEffect(() => {
-        /*global google*/
-        function initializeGoogleSignIn() {
-            google.accounts.id.initialize({
-                client_id: "1015869814270-42bekst144c6jik8558udrgi5vrile76.apps.googleusercontent.com",
-                callback: handleCallbackResponse
-            });
-    
-            google.accounts.id.renderButton(
-                document.getElementById("signInDiv"),
-                { theme: "outline", size: "large" }
-            );
+   useEffect(() => {
+    /*global google*/
+    const script = document.createElement('script');
+    script.src = 'https://accounts.google.com/gsi/client';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+
+    script.onload = () => {
+        google.accounts.id.initialize({
+            client_id: "1015869814270-42bekst144c6jik8558udrgi5vrile76.apps.googleusercontent.com",
+            callback: handleCallbackResponse
+        });
+
+        google.accounts.id.renderButton(
+            document.getElementById("signInDiv"),
+            { theme: "outline", size: "large" }
+        );
+    };
+
+    // Clean up function to remove the button when component unmounts
+    return () => {
+        const elements = document.getElementsByClassName('g_id_signin');
+        while (elements.length > 0) {
+            elements[0].parentNode.removeChild(elements[0]);
         }
-    
-        // Function to remove the sign-in button
-        function cleanupSignInButton() {
-            const elements = document.getElementsByClassName('g_id_signin');
-            while (elements.length > 0) {
-                elements[0].parentNode.removeChild(elements[0]);
-            }
-        }
-    
-        // Add event listener for DOMContentLoaded
-        function domContentLoadedHandler() {
-            initializeGoogleSignIn();
-            // Remove the event listener after it's been executed to avoid multiple executions
-            document.removeEventListener('DOMContentLoaded', domContentLoadedHandler);
-        }
-    
-        // Check if the DOM content is already loaded, if not, add an event listener
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', domContentLoadedHandler);
-        } else {
-            // If DOM content is already loaded, initialize immediately
-            initializeGoogleSignIn();
-        }
-    
-        // Clean up function to remove the button when component unmounts
-        return cleanupSignInButton;
-    }, []); // Empty dependency array ensures this effect runs only once
-    
+    };
+}, []);
 
     // Function to handle file input change
     const handleFileChange = (e) => {
