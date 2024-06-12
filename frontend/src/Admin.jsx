@@ -87,6 +87,7 @@ function Admin() {
     script.src = 'https://accounts.google.com/gsi/client';
     script.async = true;
     script.defer = true;
+    document.body.appendChild(script);
 
     script.onload = () => {
         google.accounts.id.initialize({
@@ -99,8 +100,6 @@ function Admin() {
             { theme: "outline", size: "large" }
         );
     };
-
-    document.body.appendChild(script);
 
     // Clean up function to remove the button when component unmounts
     return () => {
