@@ -1,0 +1,43 @@
+.form-page {
+    position: relative; /* Use relative positioning */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ensure the form-page covers the entire viewport height */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Form {
+    width: 100%; /* Ensure .Form spans the entire width */
+  }
+  
+  .Form .navbar-custom {
+    background-color: rgba(174, 174, 174, 0.441);
+    z-index: 2; /* Set a higher z-index to keep it above other content */
+    position: absolute; /* Position the navbar absolutely */
+    top: 0; /* Position it at the top of the form-page */
+    left: 0;
+    width: 100%; /* Make it full-width */
+    font-size: 2em; /* Adjust font size as needed */
+    font-family: 'custom-font', sans-serif;
+  }
+  
+  .Form .navbar-custom .nav-link {
+    margin-right: 25px; /* Adjust the value as needed to increase the distance */
+  }
+  
+  .form-container {
+    font-family: 'body-font', sans-serif;
+    background-color: rgb(250, 255, 244);
+    border: 2px solid black; /* Add a border around the container */
+    width: 50%; /* Set the width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 75px; /* Add padding inside the container */
+    box-sizing: border-box; /* Include padding and border in the width */
+    margin-top: 10%; /* Add margin to the top of the container */
+    animation: slideUp .5s ease forwards;
+  }
+  

@@ -6,6 +6,7 @@ import Blog from './Blog.jsx';
 import Contact from './Contact.jsx';
 import Gallery from './Gallery.jsx';
 import Admin from './Admin.jsx';
+import Form from './FormSubmit.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/blog" element={<Blog />} /> 
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/form" element={<Form />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
     </Router>
