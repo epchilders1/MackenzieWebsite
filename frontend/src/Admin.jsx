@@ -81,35 +81,39 @@ function Admin() {
         setLoginAttempt(true);
     }
 
-   useEffect(() => {
-    /*global google*/
-    const script = document.createElement('script');
-    script.src = 'https://accounts.google.com/gsi/client';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-
-    script.onload = () => {
-        google.accounts.id.initialize({
-            client_id: "1015869814270-42bekst144c6jik8558udrgi5vrile76.apps.googleusercontent.com",
-            callback: handleCallbackResponse
-        });
-
-        google.accounts.id.renderButton(
-            document.getElementById("signInDiv"),
-            { theme: "outline", size: "large" }
-        );
-    };
-
-    // Clean up function to remove the button when component unmounts
-    return () => {
-        const elements = document.getElementsByClassName('g_id_signin');
-        while (elements.length > 0) {
-            elements[0].parentNode.removeChild(elements[0]);
-        }
-    };
-}, []);
-
+    useEffect(() => {
+        /*global google*/
+        const script = document.createElement('script');
+        script.src = 'https://accounts.google.com/gsi/client';
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+    
+        script.onload = () => {
+            google.accounts.id.initialize({
+                client_id: "1015869814270-42bekst144c6jik8558udrgi5vrile76.apps.googleusercontent.com",
+                callback: handleCallbackResponse
+            });
+    
+            google.accounts.id.renderButton(
+                document.getElementById("signInDiv"),
+                { theme: "outline", size: "large" }
+            );
+        };
+    
+        script.onerror = (error) => {
+            console.error('Error loading Google Sign-In script:', error);
+        };
+    
+        // Clean up function to remove the button when component unmounts
+        return () => {
+            const elements = document.getElementsByClassName('g_id_signin');
+            while (elements.length > 0) {
+                elements[0].parentNode.removeChild(elements[0]);
+            }
+        };
+    }, []);
+    
     // Function to handle file input change
     const handleFileChange = (e) => {
         setImage(e.target.files);
