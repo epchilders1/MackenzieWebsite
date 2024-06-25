@@ -39,7 +39,7 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'", 'https://accounts.google.com'], // Add 'https://accounts.google.com' to default sources
-      scriptSrc: ["'self'", 'https://accounts.google.com', 'www.google-analytics.com'], // Add 'https://accounts.google.com' to script sources
+      scriptSrc: ["'self'","'unsafe-inline'", 'https://accounts.google.com', 'www.google-analytics.com'], // Add 'https://accounts.google.com' to script sources
       frameSrc: ["'self'", 'https://accounts.google.com'] // Allow framing from 'https://accounts.google.com'
       // Add other directives as needed
     },
