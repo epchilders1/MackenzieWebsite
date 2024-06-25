@@ -7,14 +7,20 @@ const app = express();
 const profile = require('./profile');
 const blogpost = require('./blogpost');
 require('dotenv').config();
+
 // Security middleware
 app.use(helmet());
 
 // Enable CORS for all routes
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:8000', 'https://evan-childers.com', 'https://kenzie-websiteapp-08e2d0899b03.herokuapp.com'], // Add your allowed origins here
-  methods: ['GET', 'POST'], // Specify allowed HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'] // Specify allowed headers
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:8000',
+    'https://evan-childers.com',
+    'https://kenzie-websiteapp-08e2d0899b03.herokuapp.com'
+  ],
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Parse JSON and urlencoded data
@@ -27,6 +33,17 @@ app.use(express.static(path.join(__dirname, '../frontend/dist')));
 // Routes
 app.use('/profile', profile);
 app.use('/blogpost', blogpost);
+
+// Content Security Policy
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", 'https://accounts.google.com', 'www.google-analytics.com'], // Add 'https://accounts.google.com' to script sources
+      // Add other directives as needed
+    },
+  })
+);
 
 // Catch-all handler to serve the frontend's index.html for all other routes
 app.get('/*', (req, res) => {

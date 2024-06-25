@@ -22,7 +22,7 @@ function Admin() {
         
         try {
             console.log('Submitting file to /profile');
-            const response = await fetch('http://localhost:8000/profile', { // Correct URL https://kenzie-websiteapp-08e2d0899b03.herokuapp.com/profile
+            const response = await fetch('https://kenzie-websiteapp-08e2d0899b03.herokuapp.com/profile', { // Correct URL https://kenzie-websiteapp-08e2d0899b03.herokuapp.com/profile
                 method: 'POST',
                 body: formData
             });
@@ -54,7 +54,7 @@ function Admin() {
     
         try {
             console.log('Submitting files to /blogpost');
-            const response = await fetch('http://localhost:8000/blogpost', {
+            const response = await fetch('https://kenzie-websiteapp-08e2d0899b03.herokuapp.com/blogpost', {
                 method: 'POST',
                 body: formData
             });
