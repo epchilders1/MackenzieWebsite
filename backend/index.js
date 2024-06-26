@@ -43,9 +43,8 @@ app.use(
       frameSrc: ["'self'", 'https://accounts.google.com'] // Allow framing from 'https://accounts.google.com'
       // Add other directives as needed
     },
-    crossOriginEmbedderPolicy: true,
-  crossOriginOpenerPolicy: "same-origin-allow-popups"
-}));
+  })
+);
 
 // Catch-all handler to serve the frontend's index.html for all other routes
 app.get('/*', (req, res) => {
