@@ -82,6 +82,8 @@ function Admin() {
     }
 
     useEffect(() => {
+        console.log('Client ID:', process.env.REACT_APP_GOOGLE_CLIENT_ID);
+
         const script = document.createElement('script');
         script.src = 'https://accounts.google.com/gsi/client';
         script.async = true;
