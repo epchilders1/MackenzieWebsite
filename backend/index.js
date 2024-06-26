@@ -9,16 +9,22 @@ const blogpost = require('./blogpost');
 require('dotenv').config();
 
 // Security middleware
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "https://accounts.google.com"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      frameSrc: ["'self'", "https://accounts.google.com"]
+    }
+  },
+  crossOriginEmbedderPolicy: true,
+  crossOriginOpenerPolicy: "same-origin-allow-popups"
+}));
 
 // Enable CORS for all routes
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'http://localhost:8000',
-    'https://evan-childers.com',
-    'https://kenzie-websiteapp-08e2d0899b03.herokuapp.com'
-  ],
+  origin: ['http://localhost:5173', 'http://localhost:8000', 'https://evan-childers.com', 'https://kenzie-websiteapp-08e2d0899b03.herokuapp.com'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -33,18 +39,6 @@ app.use(express.static(path.join(__dirname, '../frontend/dist')));
 // Routes
 app.use('/profile', profile);
 app.use('/blogpost', blogpost);
-
-// Content Security Policy
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'", 'https://accounts.google.com'], // Add 'https://accounts.google.com' to default sources
-      scriptSrc: ["'self'", 'https://accounts.google.com', 'www.google-analytics.com'], // Add 'https://accounts.google.com' to script sources
-      frameSrc: ["'self'", 'https://accounts.google.com'] // Allow framing from 'https://accounts.google.com'
-      // Add other directives as needed
-    },
-  })
-);
 
 // Catch-all handler to serve the frontend's index.html for all other routes
 app.get('/*', (req, res) => {
