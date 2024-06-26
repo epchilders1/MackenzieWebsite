@@ -82,34 +82,33 @@ function Admin() {
     }
 
     useEffect(() => {
-        /*global google*/
         const script = document.createElement('script');
         script.src = 'https://accounts.google.com/gsi/client';
         script.async = true;
         script.defer = true;
         document.body.appendChild(script);
-    
+
         script.onload = () => {
-            google.accounts.id.initialize({
-                client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
-                callback: handleCallbackResponse
-            });
-    
-            google.accounts.id.renderButton(
-                document.getElementById("signInDiv"),
-                { theme: "outline", size: "large" }
-            );
-        };
-    
-        // Clean up function to remove the button when component unmounts
-        return () => {
-            const elements = document.getElementsByClassName('g_id_signin');
-            while (elements.length > 0) {
-                elements[0].parentNode.removeChild(elements[0]);
+            if (window.google) {
+                window.google.accounts.id.initialize({
+                    client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+                    callback: handleCallbackResponse
+                });
+
+                window.google.accounts.id.renderButton(
+                    document.getElementById('signInDiv'),
+                    { theme: 'outline', size: 'large' }
+                );
+            } else {
+                console.error('Google Sign-In script failed to load');
             }
         };
+
+        return () => {
+            document.body.removeChild(script);
+        };
     }, []);
-    
+
 
     // Function to handle file input change
     const handleFileChange = (e) => {
